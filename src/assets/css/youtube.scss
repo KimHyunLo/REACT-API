@@ -1,0 +1,31 @@
+@charset "urf-8";
+
+.youtube__cont {
+  background-color: var(--black);
+  min-height: 100vh;
+}
+.youtube__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+  border: 0.1rem solid rgb(123, 123, 123);
+  margin-bottom: 5rem;
+  height: 30rem;
+}
+.youtube__text {
+  width: 50%;
+  h2 {
+    font-family: var(--subKor_font);
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .image {
+    background: rgb(255, 91, 91);
+  }
+}
+.youtube__img {
+  width: 45%;
+}
