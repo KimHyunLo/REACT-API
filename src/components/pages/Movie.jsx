@@ -10,29 +10,20 @@ function Movie() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
     fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=2da8ca399ff34f67831da4b85fa88dc7",
-      requestOptions
+      "https://api.themoviedb.org/3/search/movie?api_key=9278d13f704ad0fe53c2263b692efd89&query=marvel"
     )
       .then((response) => response.json())
-      // .then((result) => console.log(result.results))
-      .then((result) => {
-        setMovies(result.results);
-      })
+      .then((result) => setMovies(result.results))
       .catch((error) => console.log("error", error));
   }, []);
-
+  
   return (
     <>
       <Header />
       <Content>
         <Title title={["Movie", "Api"]} />
-        <MovCont movies={movies} />
+        {/* <MovCont movies={movies} /> */}
         <Contact />
       </Content>
       <Footer />

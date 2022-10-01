@@ -1,32 +1,37 @@
 import React from "react";
 
-function MovieList({ title, desc, image, date }) {
+const search = (query) => {
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=9278d13f704ad0fe53c2263b692efd89&query=${query}`
+  )
+    .then((response) => response.json())
+    .then((result) => setMovies(result.results));
+};
+
+function MovieItem(props) {
   return (
-    <div className="movie__item">
-      <div className="movie__text">
-        <h2>{title}</h2>
-        <div className="movie__date">release date: {date}</div>
-        <p>{desc}</p>
-      </div>
-      <img src={`https://image.tmdb.org/t/p/w500/${image}`} alt={title} />
-    </div>
+    <li>
+      <a href={`https://www.themoviedb.org/movie/${props.movie.id}`}>
+        <img
+          src={`https://image.tmdb.org/t/p/w342${props.movie.poster_path}`}
+          alt={props.movie.title}
+        />
+        <span>{props.movie.title}</span>
+      </a>
+    </li>
   );
 }
 
-function MovCont({ movies }) {
+function MovieCont(props) {
   return (
     <div className="movie__cont">
       <div className="container">
-        <div className="movie__inner">
-          {movies.map((movie) => (
-            <MovieList
-              key={movie.id}
-              title={movie.title}
-              desc={movie.overview}
-              image={movie.poster_path}
-              date={movie.release_date}
-            />
-          ))}
+        <div className="movie__list">
+          <ul>
+            {props.movies.map((movies, index) => (
+              <MovieItem movie={movies} key={index} />
+            ))}
+          </ul>
         </div>
       </div>
     </div>

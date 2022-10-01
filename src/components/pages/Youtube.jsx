@@ -8,23 +8,14 @@ import Contact from "../layout/Contact";
 import { useEffect } from "react";
 
 function Youtube() {
-  const [videos, setVideos] = useState([]);
+  const [youtubes, setYoutubes] = useState([]);
 
   useEffect(() => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
     fetch(
-      "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=webstoryboy&maxResults=30&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0",
-      requestOptions
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=webstoryboy&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0&maxResults=28&type=video`
     )
       .then((response) => response.json())
-      // .then((result) => console.log(result.items))
-      .then((result) => {
-        setVideos(result.items);
-      })
+      .then((result) => setYoutubes(result.items))
       .catch((error) => console.log("error", error));
   }, []);
 
@@ -33,7 +24,7 @@ function Youtube() {
       <Header />
       <Content>
         <Title title={["Youtube", "Api"]} />
-        <YoutubeCont videos={videos} />
+        <YoutubeCont youtubes={youtubes} />
         <Contact />
       </Content>
       <Footer />

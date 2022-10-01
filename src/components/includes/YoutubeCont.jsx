@@ -1,33 +1,39 @@
 import React from "react";
 
-function YoutubeList({ title, image, channel }) {
+function YoutubeItem(props) {
   return (
-    <div className="youtube__item">
-      <div className="youtube__text">
-        <h2>{title}</h2>
-        <div>{channel}</div>
-      </div>
-      <div className="youtube__img">
-        <img src={image} alt={title} />
-      </div>
+    <li>
+      <a href={`https://www.youtube.com/watch?v=${props.video.id.videoId}`}>
+        <img
+          src={props.video.snippet.thumbnails.medium.url}
+          alt={props.video.snippet.title}
+        />
+        <p>{props.video.snippet.title}</p>
+      </a>
+    </li>
+  );
+}
+
+function YoutubeList(props) {
+  return (
+    <div className="youtube__list">
+      <ul>
+        {props.video.map((video, index) => (
+          <YoutubeItem key={index} video={video} />
+        ))}
+      </ul>
     </div>
   );
 }
 
-function YoutubeCont({ videos }) {
+function YoutubeCont({ youtubes }) {
   return (
     <div className="youtube__cont">
       <div className="container">
         <div className="youtube__inner">
-          {/* <YoutubeSerach /> */}
-          {videos.map((video) => (
-            <YoutubeList
-              key={video.etag}
-              title={video.snippet.title}
-              image={video.snippet.thumbnails.high.url}
-              channel={video.snippet.channelTitle}
-            />
-          ))}
+          <ul>
+            <YoutubeList video={youtubes} />
+          </ul>
         </div>
       </div>
     </div>
