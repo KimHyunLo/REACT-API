@@ -1,12 +1,5 @@
 import React from "react";
 
-const search = (query) => {
-  fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=9278d13f704ad0fe53c2263b692efd89&query=${query}`
-  )
-    .then((response) => response.json())
-    .then((result) => setMovies(result.results));
-};
 
 function MovieItem(props) {
   return (
@@ -22,7 +15,7 @@ function MovieItem(props) {
   );
 }
 
-function MovieCont(props) {
+function MovCont(props) {
   return (
     <div className="movie__cont">
       <div className="container">

@@ -1,26 +1,28 @@
 import React from "react";
 
-function SplashList({ name, image }) {
+function SplashItem({ splash }) {
   return (
-    <div className="splash__item">
-      <h2>{name}</h2>
-      <img src={image} alt={name} />
-    </div>
+    <li>
+      <a href={`https://unsplash.com/photos/${splash.id}`}>
+        <img src={splash.urls.regular} alt={splash.id} />
+        <span>by "{splash.user.name}"</span>
+        <span>{splash.created_at}</span>
+      </a>
+    </li>
   );
 }
 
 function UnsplashCont({ splashes }) {
+  console.log(splashes[0]);
   return (
     <div className="splash__cont">
       <div className="container">
-        <div className="splash__inner">
-          {splashes.map((splash) => (
-            <SplashList
-              key={splash.id}
-              name={splash.user.name}
-              image={splash.urls.regular}
-            />
-          ))}
+        <div className="splash__list">
+          <ul>
+            {splashes.map((splash, index) => (
+              <SplashItem key={index} splash={splash} />
+            ))}
+          </ul>
         </div>
       </div>
     </div>

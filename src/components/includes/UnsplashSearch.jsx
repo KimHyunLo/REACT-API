@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-function MovieSearch({ onSearch }) {
+function UnsplashSearch({ onSearch }) {
   const inputRef = useRef();
 
   const handleSearch = () => {
@@ -19,7 +19,7 @@ function MovieSearch({ onSearch }) {
   };
 
   return (
-    <div className="movie__search">
+    <div className="splash__search">
       <div className="container">
         <h2>검색하기</h2>
         <input
@@ -36,4 +36,4 @@ function MovieSearch({ onSearch }) {
   );
 }
 
-export default MovieSearch;
+export default UnsplashSearch;
