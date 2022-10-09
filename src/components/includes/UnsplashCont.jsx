@@ -5,15 +5,12 @@ function SplashItem({ splash }) {
     <li>
       <a href={`https://unsplash.com/photos/${splash.id}`}>
         <img src={splash.urls.regular} alt={splash.id} />
-        <span>by "{splash.user.name}"</span>
-        <span>{splash.created_at}</span>
       </a>
     </li>
   );
 }
 
 function UnsplashCont({ splashes }) {
-  console.log(splashes[0]);
   return (
     <div className="splash__cont">
       <div className="container">

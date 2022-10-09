@@ -3,6 +3,7 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Content from "../layout/Content";
 import Title from "../layout/Title";
+import RandomSlide from "../includes/RandomSlide";
 import UnsplashSearch from "../includes/UnsplashSearch";
 import UnsplashCont from "../includes/UnsplashCont";
 import Contact from "../layout/Contact";
@@ -10,6 +11,7 @@ import { useState, useEffect } from "react";
 
 function Unsplash() {
   const [splashes, setSplashes] = useState([]);
+  const [random, setRandom] = useState([]);
 
   const search = (query) => {
     fetch(
@@ -28,6 +30,15 @@ function Unsplash() {
         setSplashes(result.results);
       })
       .catch((error) => console.log("error", error));
+
+    fetch(
+      "https://api.unsplash.com/photos/random?client_id=_Qj8pAEH3PNaxSoZd9sPXo5pmx7noH38BI4nmYwxlSI&count=10"
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setRandom(result);
+      })
+      .catch((error) => console.log("error", error));
   }, []);
 
   return (
@@ -35,6 +46,7 @@ function Unsplash() {
       <Header />
       <Content>
         <Title title={["Unsplash", "Api"]} />
+        <RandomSlide random={random} />
         <UnsplashSearch onSearch={search} />
         <UnsplashCont splashes={splashes} />
         <Contact />

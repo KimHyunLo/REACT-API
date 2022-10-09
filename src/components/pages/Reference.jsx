@@ -7,20 +7,6 @@ import RefCont from "../includes/RefCont";
 import Contact from "../layout/Contact";
 import axios from "axios";
 
-// function Reference() {
-//   return (
-//     <>
-//       <Header />
-//       <Content>
-//         <Title title={["Reference", "Api"]} />
-//         <RefCont />
-//         <Contact />
-//       </Content>
-//       <Footer />
-//     </>
-//   );
-// }
-
 class Reference extends React.Component {
   state = {
     refers: [],
