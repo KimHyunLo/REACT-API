@@ -128,8 +128,22 @@
   }
 
   .top-item {
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     p {
+      padding-top: 2vw;
       color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: no-wrap;
+    }
+    img {
+      width: 25vw;
     }
   }
 }

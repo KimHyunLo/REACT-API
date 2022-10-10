@@ -19,7 +19,7 @@ function TopYoutube({ top }) {
     return (
       <div className="top-slide">
         <span className="title">
-          <h1>Coding Videos</h1>
+          <h1>Popular Videos</h1>
         </span>
         <Swiper
           slidesPerView={3}
