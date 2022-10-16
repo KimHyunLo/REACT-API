@@ -7,10 +7,12 @@ function Slider({ movie }) {
   if (movie !== undefined) {
     return (
       <div className="slide_item">
-        <img
-          src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-          alt={movie.title}
-        />
+        <a href={`https://www.themoviedb.org/movie/${movie.id}`}>
+          <img
+            src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+            alt={movie.title}
+          />
+        </a>
       </div>
     );
   } else {
