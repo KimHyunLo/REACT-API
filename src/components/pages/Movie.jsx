@@ -6,6 +6,7 @@ import Title from "../layout/Title";
 import TopMovie from "../includes/TopMovie";
 import MovieSearch from "../includes/MovieSearch";
 import MovCont from "../includes/MovCont";
+import MovieBtn from "../includes/MovieBtn";
 import Contact from "../layout/Contact";
 
 function Movie() {
@@ -44,6 +45,7 @@ function Movie() {
         <Title title={["Movie", "Api"]} />
         <TopMovie topMovies={topMovies} />
         <MovieSearch onSearch={search} />
+        <MovieBtn onSearch={search} />
         <MovCont movies={movies} />
         <Contact />
       </Content>

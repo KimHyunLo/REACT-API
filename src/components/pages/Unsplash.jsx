@@ -5,6 +5,7 @@ import Content from "../layout/Content";
 import Title from "../layout/Title";
 import RandomSlide from "../includes/RandomSlide";
 import UnsplashSearch from "../includes/UnsplashSearch";
+import UnsplashBtn from "../includes/UnsplashBtn";
 import UnsplashCont from "../includes/UnsplashCont";
 import Contact from "../layout/Contact";
 import { useState, useEffect } from "react";
@@ -48,6 +49,7 @@ function Unsplash() {
         <Title title={["Unsplash", "Api"]} />
         <RandomSlide random={random} />
         <UnsplashSearch onSearch={search} />
+        <UnsplashBtn onSearch={search} />
         <UnsplashCont splashes={splashes} />
         <Contact />
       </Content>

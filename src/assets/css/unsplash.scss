@@ -55,9 +55,8 @@
 
 .random-slide {
   height: auto;
-  padding-bottom: 10vw;
   background: #000;
-  height: 50vw;
+  padding-bottom: 5rem;
 
   .title h1 {
     color: white;
@@ -67,8 +66,8 @@
   }
 
   .swiper {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 30vw;
     display: flex;
     align-items: center;
   }
@@ -76,8 +75,6 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -92,22 +89,23 @@
     align-items: center;
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .swiper-pagination-bullet {
+    background: white;
   }
 
-  .random-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 35vh;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+  }
 
+  .random_item {
+    width: 75%;
+    height: 80%;
     img {
-      width: 70%;
+      width: 100%;
       height: 100%;
+      border: 1px solid white;
+      object-fit: cover;
     }
   }
 }

@@ -1,17 +1,22 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Slider({ random }) {
   return (
-    <div className="random-item">
+    <div className="random_item">
       <a href={random.links.html}>
         <img src={random.urls.regular} alt={random.id} />
       </a>
     </div>
   );
 }
+const pagination = {
+  clickable: true,
+};
 
 function RandomSlide({ random }) {
   if (random.length !== 0) {
@@ -22,13 +27,15 @@ function RandomSlide({ random }) {
         </span>
         <Swiper
           slidesPerView={3}
-          spaceBetween={30}
+          spaceBetween={0}
           loop={true}
+          navigation={true}
+          pagination={pagination}
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation, Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>

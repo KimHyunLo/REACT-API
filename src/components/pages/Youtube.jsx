@@ -23,15 +23,6 @@ function Youtube() {
       .catch((error) => console.log("error", error));
   };
 
-  const btn = (query) => {
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0&maxResults=28&type=video`
-    )
-      .then((response) => response.json())
-      .then((result) => setYoutubes(result.items))
-      .catch((error) => console.log("error", error));
-  };
-
   useEffect(() => {
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=webstoryboy&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0&maxResults=28&type=video`
@@ -55,7 +46,7 @@ function Youtube() {
         <Title title={["Youtube", "Api"]} />
         <TopYoutube top={top} />
         <YoutubeSearch onSearch={search} />
-        <YoutubeBtn btnSearch={btn} />
+        <YoutubeBtn onSearch={search} />
         <YoutubeCont youtubes={youtubes} />
         <Contact />
       </Content>
