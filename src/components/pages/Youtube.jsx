@@ -6,6 +6,7 @@ import Title from "../layout/Title";
 import TopYoutube from "../includes/TopYoutube";
 import YoutubeSearch from "../includes/YoutubeSearch";
 import YoutubeCont from "../includes/YoutubeCont";
+import YoutubeBtn from "../includes/YoutubeBtn.jsx";
 import Contact from "../layout/Contact";
 import { useEffect } from "react";
 
@@ -14,6 +15,15 @@ function Youtube() {
   const [top, setTop] = useState([]);
 
   const search = (query) => {
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0&maxResults=28&type=video`
+    )
+      .then((response) => response.json())
+      .then((result) => setYoutubes(result.items))
+      .catch((error) => console.log("error", error));
+  };
+
+  const btn = (query) => {
     fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=AIzaSyA8SlPA6kqX0OihTlnTbSNz8HL0gULdzB0&maxResults=28&type=video`
     )
@@ -45,6 +55,7 @@ function Youtube() {
         <Title title={["Youtube", "Api"]} />
         <TopYoutube top={top} />
         <YoutubeSearch onSearch={search} />
+        <YoutubeBtn btnSearch={btn} />
         <YoutubeCont youtubes={youtubes} />
         <Contact />
       </Content>

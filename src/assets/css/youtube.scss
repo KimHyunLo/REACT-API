@@ -81,55 +81,86 @@
 //   transform: translateY(100px);
 // }
 
-.top-slide {
-  height: auto;
-  padding-bottom: 10vw;
-  background: #000;
-  height: 35vw;
+.youtube__swiper {
+  .top-slide {
+    height: auto;
+    padding-bottom: 10vw;
+    background: #000;
+    height: 38vw;
 
-  .title h1 {
-    color: white;
-    font-family: "Saol";
-    font-size: 50px;
-    margin-left: 4.5vw;
-  }
-
-  .swiper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .top-item {
-    p {
+    .title h1 {
       color: white;
+      font-family: "Saol";
+      font-size: 4rem;
+      margin-left: 4.5vw;
+      text-align: center;
+    }
+
+    .swiper {
+      width: 95%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+    }
+
+    .top-item {
+      width: 75%;
+      height: 60%;
+      margin-bottom: 2rem;
+      p {
+        text-align: left;
+        margin-top: 1rem;
+        color: white;
+      }
+      img {
+        border: 1px solid white;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.btn__list {
+  background: #000;
+  width: 100%;
+  padding-bottom: 4rem;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .search {
+      color: black;
+      background: white;
+      padding: 0.5rem 1.5rem;
+      margin: 0 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
     }
   }
 }
