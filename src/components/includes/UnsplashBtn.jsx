@@ -1,6 +1,6 @@
 import React from "react";
 
-function YoutubeBtn({ onSearch }) {
+function UnsplashBtn({ onSearch }) {
   function BtnClick(e) {
     onSearch(e.target.innerHTML);
   }
@@ -8,38 +8,38 @@ function YoutubeBtn({ onSearch }) {
     <div className="btn__list">
       <ul>
         <button onClick={BtnClick} className="search">
-          영화
+          Spring
         </button>
         <button onClick={BtnClick} className="search">
-          요리 프로그램
+          Beach
         </button>
         <button onClick={BtnClick} className="search">
-          예능
+          Tokyo
         </button>
         <button onClick={BtnClick} className="search">
-          음악
+          Busan
         </button>
         <button onClick={BtnClick} className="search">
-          영화
+          Street
         </button>
         <button onClick={BtnClick} className="search">
-          게임
+          Forest
         </button>
         <button onClick={BtnClick} className="search">
-          애니메이션
+          City
         </button>
         <button onClick={BtnClick} className="search">
-          랩
+          Model
         </button>
         <button onClick={BtnClick} className="search">
-          만화
+          NewYork
         </button>
         <button onClick={BtnClick} className="search">
-          일상
+          Snow
         </button>
       </ul>
     </div>
   );
 }
 
-export default YoutubeBtn;
+export default UnsplashBtn;

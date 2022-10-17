@@ -1,6 +1,6 @@
 import React from "react";
 
-function YoutubeBtn({ onSearch }) {
+function MovieBtn({ onSearch }) {
   function BtnClick(e) {
     onSearch(e.target.innerHTML);
   }
@@ -8,38 +8,38 @@ function YoutubeBtn({ onSearch }) {
     <div className="btn__list">
       <ul>
         <button onClick={BtnClick} className="search">
-          영화
+          Avengers
         </button>
         <button onClick={BtnClick} className="search">
-          요리 프로그램
+          Titanic
         </button>
         <button onClick={BtnClick} className="search">
-          예능
+          Annabelle
         </button>
         <button onClick={BtnClick} className="search">
-          음악
+          Thor
         </button>
         <button onClick={BtnClick} className="search">
-          영화
+          Batman
         </button>
         <button onClick={BtnClick} className="search">
-          게임
+          Venom
         </button>
         <button onClick={BtnClick} className="search">
-          애니메이션
+          Matrix
         </button>
         <button onClick={BtnClick} className="search">
-          랩
+          Panda
         </button>
         <button onClick={BtnClick} className="search">
-          만화
+          Avatar
         </button>
         <button onClick={BtnClick} className="search">
-          일상
+          Dune
         </button>
       </ul>
     </div>
   );
 }
 
-export default YoutubeBtn;
+export default MovieBtn;

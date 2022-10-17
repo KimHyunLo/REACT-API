@@ -1,7 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Slider({ movie }) {
   if (movie !== undefined) {
@@ -19,6 +21,9 @@ function Slider({ movie }) {
     return;
   }
 }
+const pagination = {
+  clickable: true,
+};
 
 function TopMovie({ topMovies }) {
   return (
@@ -27,14 +32,16 @@ function TopMovie({ topMovies }) {
         <h1>Top Movies</h1>
       </span>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+        slidesPerView={4}
+        spaceBetween={10}
         loop={true}
+        navigation={true}
+        pagination={pagination}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        modules={[Autoplay, Navigation, Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>
