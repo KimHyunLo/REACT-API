@@ -19,7 +19,7 @@ function App() {
         <Route path="/youtube" element={<Youtube />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/unsplash" element={<Unsplash />} />
-        <Route path="/*" element={<Main />} />
+        <Route path="*" element={<Main />} />
       </Routes>
     </BrowserRouter>
   );

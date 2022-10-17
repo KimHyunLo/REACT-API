@@ -33,7 +33,7 @@ function TopMovie({ topMovies }) {
       </span>
       <Swiper
         slidesPerView={4}
-        spaceBetween={10}
+        spaceBetween={-50}
         loop={true}
         navigation={true}
         pagination={pagination}

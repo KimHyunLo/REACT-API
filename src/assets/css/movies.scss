@@ -76,9 +76,9 @@
   .title h1 {
     color: white;
     font-family: "Saol";
-    font-size: 50px;
-    margin-left: 4.5vw;
-    margin-bottom: 2vw;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .swiper {
@@ -87,8 +87,6 @@
   }
 
   .swiper-slide {
-    text-align: center;
-    font-size: 18px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -113,6 +111,7 @@
   }
 
   .slide_item {
+    width: 60%;
     margin-bottom: 4rem;
     img {
       border: 1px solid white;
